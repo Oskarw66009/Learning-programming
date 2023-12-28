@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 public class KalkuatorV2 {
@@ -6,12 +5,11 @@ public class KalkuatorV2 {
         static int y = 0;
         private int z = 1;
         static int number = 0;
+        static int wynik = 0;
         private void dodawanie(){
             System.out.println("Wybrałeś dodawanie!\nWybierz liczbę pierwszą: ");
             KalkuatorV2 test = new KalkuatorV2();
             test.zast_scaner();
-
-            int wynik;
             wynik = x + y;
             System.out.println("Dodajemy: "+ x +" + "+ y +" = "+ wynik );
         }
@@ -19,8 +17,6 @@ public class KalkuatorV2 {
             System.out.println("Wybrałeś odejmowanie!\nWybierz liczbę pierwszą: ");
             KalkuatorV2 test = new KalkuatorV2();
             test.zast_scaner();
-
-            int wynik;
             wynik = x - y;
             System.out.println("Odejmujemy: "+ x +" - "+ y +" = "+ wynik );
         }
@@ -28,8 +24,6 @@ public class KalkuatorV2 {
             System.out.println("Wybrałeś dzielenie!\nWybierz liczbę pierwszą: ");
             KalkuatorV2 test = new KalkuatorV2();
             test.zast_scaner();
-
-            int wynik;
             wynik = x / y;
             System.out.println("Dzielimy: "+ x +" : "+ y +" = "+ wynik );
         }
@@ -37,7 +31,6 @@ public class KalkuatorV2 {
             System.out.println("Wybrałeś mnożenie!\nWybierz liczbę pierwszą: ");
             KalkuatorV2 test = new KalkuatorV2();
             test.zast_scaner();
-            int wynik;
             wynik = x * y;
             System.out.println("Mnożymy: "+ x +" * "+ y +" = "+ wynik);
         }
@@ -47,8 +40,7 @@ public class KalkuatorV2 {
         void setz(){
             System.out.println("Czy chcesz coś policzyć jeszcze?\nJeśli tak wpisz liczbę większą od 0!");
             Scanner all3 = new Scanner(System.in);
-            int liczba_wybrana3 = all3.nextInt();
-            z = liczba_wybrana3;
+            z = all3.nextInt();
         }
 
         private void getnumber(){
@@ -60,17 +52,17 @@ public class KalkuatorV2 {
         }
         private void zast_scaner(){
             Scanner all = new Scanner(System.in);
-            int liczba_wybrana = all.nextInt();
-            x = liczba_wybrana;
+            x = all.nextInt();
+
             System.out.println("Pierwsza liczba: "+ x);
 
             System.out.println("Wybierz drugą liczbę! ");
             Scanner all2 = new Scanner(System.in);
-            int liczba_wybrana2 = all2.nextInt();
-            y = liczba_wybrana2;
+            y = all2.nextInt();
+
             System.out.println("Druga liczba: "+ y);
         }
-        public static void main(String[] args) throws IOException {
+        public static void main(String[] args){
             KalkuatorV2 jaka_operacja = new KalkuatorV2();
             KalkuatorV2 ile_operacji = new KalkuatorV2();
             jaka_operacja.getnumber();
