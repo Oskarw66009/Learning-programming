@@ -1,0 +1,60 @@
+interface Zwierzeta {
+    int ile_w_zoo();
+}
+abstract class Zwierzeta_w_zoo implements Zwierzeta {
+    private int ile_w_klatce;
+    public Zwierzeta_w_zoo(int ile) { //fucking konstruktor
+        this.ile_w_klatce = ile;
+    }
+    abstract void wyswietl_ile();
+}
+class Mamuty extends Zwierzeta_w_zoo{
+    private String nazwa_gatunku;
+
+    public Mamuty(int ile, String nazwa_gatunku) {
+        super(ile);
+        this.nazwa_gatunku = nazwa_gatunku;
+    }
+
+    @Override
+    public int ile_w_zoo() {
+        return 4;
+    }
+
+    @Override
+    void wyswietl_ile() {
+        System.out.println("Ile w zoo: " + ile_w_zoo());
+
+    }
+}
+class Tygrys_bengalijski extends Zwierzeta_w_zoo{
+    private String nazwa_gatunku;
+
+    public Tygrys_bengalijski(int ile, String nazwa_gatunku) {
+        super(ile);
+        this.nazwa_gatunku = nazwa_gatunku;
+    }
+
+    @Override
+    public int ile_w_zoo() {
+        return 15;
+    }
+
+    @Override
+    void wyswietl_ile() {
+        System.out.println("Ile w zoo: " + ile_w_zoo());
+    }
+}
+
+public class Main_zwierzeta {
+    public static void main(String[] args){
+        Mamuty M = new Mamuty(5,"Mamutas Guralas");
+
+        M.wyswietl_ile();
+        Tygrys_bengalijski T = new Tygrys_bengalijski(24, "Tygrysoli Rawioli");
+
+        T.wyswietl_ile();
+
+
+    }
+}
